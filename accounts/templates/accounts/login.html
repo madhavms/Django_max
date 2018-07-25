@@ -1,22 +1,26 @@
 <!DOCTYPE html>
+{%extends 'base.html'%}
 <html>
   <head>
     <meta charset="utf-8">
+    {%block head%}
     <title>Login</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css"
-    integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em"
-crossorigin="anonymous"></script>
+    {%endblock%}
 
-{% load static %}
-<link rel="stylesheet" href="{%static 'accounts/style.css'%}" type="text/css">
   </head>
   <body>
-    <div class="container">
+    {%block body%}
+
           <h1>WELCOME!</h1>
+<p1>
           You can login here!
-          <button type="button" class="btn btn-outline-primary">Login</button>
-  </div>
-  <div class="jumbotron"><h1>Welcome!</h1></div>
+
+</p1>
+<h2>Login</h2>
+<form method="post">
+{%csrf_token%}
+{{form.as_p}}
+</form>
+  {%endblock%}
   </body>
 </html>
