@@ -10,6 +10,8 @@
   </head>
   <body>
     {%block body%}
+<div class="container">
+
 
           <h1>WELCOME!</h1>
 <p1>
@@ -20,7 +22,10 @@
 <form method="post">
 {%csrf_token%}
 {{form.as_p}}
+<button type="submit" name="button">Login</button>
+
 </form>
+</div>
   {%endblock%}
   </body>
 </html>
