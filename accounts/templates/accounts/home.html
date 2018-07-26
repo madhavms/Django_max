@@ -11,8 +11,14 @@
   </head>
   <body>
     {%block body%}
-    <h1>WELCOME HOME</h1>
+    <h1>WELCOME HOME:{{user}}</h1>
     {%endblock%}
 
   </body>
 </html>
+{%block login%}
+{%endblock%}
+
+{%block register%}
+<a class="navbar-brand" href="{% url 'logout'%}">Logout</a>  <!--this templating gives direct access to the url that is given name='register'-->
+{%endblock%}

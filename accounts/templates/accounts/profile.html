@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+<h1>Home</h1>
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    {%block head%}
+    <title>Profile</title>
+    {%endblock%}
+{%block body%}
+<div class="container">
+<p>
+  <h1>{{user}}</h1>
+  <h1>{{user.email}}</h1>
+</p>
+</div>
+
+{%endblock%}
+
+{%block login%}
+{%endblock%}
