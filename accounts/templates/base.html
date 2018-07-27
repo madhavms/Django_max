@@ -17,12 +17,24 @@
     <div class="navbar-header">
       <a class="navbar-brand" href="">TEST BLOG</a>
       {%block login%}
-      <a class="navbar-brand" href="{%url 'login'%}">Login</a>
+      <a class="navbar-brand nav navbar-right" href="{%url 'login'%}">Login</a>
       {%endblock%}
     </div>
     {%block register%}
-  <a class="navbar-brand" href="{% url 'register'%}">Register</a>  <!--this templating gives direct access to the url that is given name='register'-->
+  <a class="navbar-brand nav navbar-right" href="{% url 'register'%}">Register</a>  <!--this templating gives direct access to the url that is given name='register'-->
    {%endblock%}
+   {%block logout%}
+ <a class="navbar-brand nav navbar-right" href="{% url 'logout'%}">Logout</a>  <!--this templating gives direct access to the url that is given name='register'-->
+  {%endblock%}
+  {%block profile%}
+  <a class="navbar-brand nav navbar-right" href="{%url 'view_profile'%}">Profile</a>
+  {%endblock%}
+  {%block home%}
+  <a class="navbar-brand" href="{%url 'home'%}">Home</a>
+  {%endblock%}
+  {%block edit_profile%}
+  <a class="navbar-brand nav navbar-right" href="{%url 'edit_profile'%}">Edit Profile</a>
+  {%endblock%}
   </div>
 </nav>
 

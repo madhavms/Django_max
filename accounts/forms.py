@@ -25,3 +25,9 @@ class RegistrationForm(UserCreationForm):
             user.save()
 
         return user
+class EditProfileForm(UserChangeForm):
+    email = forms.EmailField(required=True)
+
+    class Meta:
+        model = User
+        fields = ('first_name','last_name')
