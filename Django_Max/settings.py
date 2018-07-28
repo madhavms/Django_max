@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'accounts',
     'crispy_forms',
+    'blog',
 ]
 
 MIDDLEWARE = [
@@ -135,3 +136,4 @@ EMAIL_USE_TLS = True
 
 EMAIL_BACKEND = "sgbackend.SendGridBackend"
 SENDGRID_API_KEY = ""
+#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

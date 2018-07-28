@@ -18,5 +18,5 @@ urlpatterns = [
                                                                                    #is not a valid view function or pattern name.
     url(r'^reset_password_confirm/(?P<uidb64>[0-9A-Za-z]+)-(?P<token>.+)/$',
     password_reset_confirm,name='password_reset_confirm'),                       ###CONNECTION REFUSED ERROR:https://stackoverflow.com/questions/5802189/django-errno-111-connection-refused#5802348
-    url(r'^reset_password_complete/$',password_reset_complete,name="password_reset_complete"),
+    url(r'^reset_password_complete/$',password_reset_complete,{'template_name':'accounts/password_reset_complete.html'},name="password_reset_complete"),
 ]
