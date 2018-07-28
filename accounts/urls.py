@@ -5,7 +5,7 @@ password_reset_done,password_reset_confirm,password_reset_complete )#gives acces
 
 urlpatterns = [
 
-    url(r'^$',views.home,name='home'),
+
     url(r'^login/$',login,{'template_name':'accounts/login.html'},name='login'),
     url(r'^logout/$',logout,{'template_name':'accounts/logout.html'},name='logout'),
     url(r'^register/$',views.register,name="register"),
@@ -20,3 +20,4 @@ urlpatterns = [
     password_reset_confirm,name='password_reset_confirm'),                       ###CONNECTION REFUSED ERROR:https://stackoverflow.com/questions/5802189/django-errno-111-connection-refused#5802348
     url(r'^reset_password_complete/$',password_reset_complete,{'template_name':'accounts/password_reset_complete.html'},name="password_reset_complete"),
 ]
+ 
