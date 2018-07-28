@@ -121,3 +121,17 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 LOGIN_REDIRECT_URL='/account/'  #Its this specific name that identifies redirect after login added by programmer
+#EMAIL_HOST = 'localhost'
+#EMAIL_PORT = 1025
+#python -m smtpd -n -c DebuggingServer localhost:1025
+
+
+EMAIL_HOST = 'smtp.sendgrid.net'
+EMAIL_HOST_USER = 'apikey'
+EMAIL_HOST_PASSWORD = ''
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+
+
+EMAIL_BACKEND = "sgbackend.SendGridBackend"
+SENDGRID_API_KEY = ""

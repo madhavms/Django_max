@@ -6,7 +6,7 @@ EditProfileForm)
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserChangeForm,PasswordChangeForm
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth import update_session_auth_hash
+from django.contrib.auth import update_session_auth_hash   #ENSURES THAT USER LOGGED IN AFTER PASSWORD CHANGE REDIRECT
 # Create your views here.
 
 @login_required
@@ -48,7 +48,7 @@ def change_password(request):
         if form.is_valid():
             form.save()
             update_session_auth_hash(request,form.user) #form.user gives user that used the form
-            return redirect('/account/')
+            return redirect('/account/profile')
         else:
             return redirect('/account/change_password')
     else:
