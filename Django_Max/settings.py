@@ -122,7 +122,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
-LOGIN_REDIRECT_URL='/account/'  #Its this specific name that identifies redirect after login added by programmer
+LOGIN_URL='/account/login' #sets redirect url for @login_required
+LOGIN_REDIRECT_URL='/home/'  #Its this specific name that identifies redirect after login
 #EMAIL_HOST = 'localhost'
 #EMAIL_PORT = 1025
 #python -m smtpd -n -c DebuggingServer localhost:1025
@@ -137,4 +138,3 @@ EMAIL_USE_TLS = True
 
 EMAIL_BACKEND = "sgbackend.SendGridBackend"
 SENDGRID_API_KEY = ""
-#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

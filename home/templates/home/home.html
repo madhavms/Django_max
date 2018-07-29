@@ -1,5 +1,5 @@
 {%extends 'base.html'%}
-
+{% load crispy_forms_tags %}
 {%block head %}
 
 <title>Home</title>
@@ -11,9 +11,17 @@
 <h1>Home</h1>
 <form method="post">
 {%csrf_token%}
-
-<button type="submit">Submit</button>
+{{form|crispy}}
+<br><button type="submit">Submit</button>
 </form>
-
+<h2>{{text}}</h2>
+{%for post in posts%}
+<h1>{{post.post}}</h1>
+<p>Posted by {{post.user.get_full_name}} on {{post.date}}</p>
+{%endfor%}
 </div>
+{%endblock%}
+{%block login%}
+{%endblock%}
+{%block register%}
 {%endblock%}

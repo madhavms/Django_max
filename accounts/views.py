@@ -9,10 +9,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import update_session_auth_hash   #ENSURES THAT USER LOGGED IN AFTER PASSWORD CHANGE REDIRECT
 # Create your views here.
 
-@login_required
-def home(request):
 
-    return render(request,'accounts/home.html')
 
 def register(request):
 	if request.method=='POST':
