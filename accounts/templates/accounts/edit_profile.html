@@ -7,9 +7,10 @@
     {%endblock%}
 {%block body%}
 <div class="container">
+<h1>Edit Profile</h1>
   <form method="POST">
 {%csrf_token%}
-{{form|crispy}}
+<br>{{form|crispy}}
 <button type="submit" name="button">Submit</button>
 </form>
 </div>

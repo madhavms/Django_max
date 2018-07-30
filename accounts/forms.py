@@ -36,3 +36,4 @@ class EditProfileForm(UserChangeForm):
             'last_name',
             'password')
              #password is necessary
+        

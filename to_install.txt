@@ -1,0 +1,3 @@
+pip install asgi_redis
+https://gearheart.io/blog/creating-a-chat-with-django-channels/
+pip install websocket-client
