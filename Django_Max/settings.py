@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'chat'
 
+
 ]
 
 MIDDLEWARE = [
@@ -154,5 +155,18 @@ CHANNEL_LAYERS = {
             "hosts": [(redis_host, 6379)],
         },
        "ROUTING": "multichat.routing.channel_routing", # We will create it in a moment
+    },
+}
+ASGI_APPLICATION = 'mysite.routing.application'
+
+# mysite/settings.py
+# Channels
+ASGI_APPLICATION = 'mysite.routing.application'
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channels_redis.core.RedisChannelLayer',
+        'CONFIG': {
+            "hosts": [('127.0.0.1', 6379)],
+        },
     },
 }

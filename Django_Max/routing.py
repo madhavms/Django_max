@@ -1,10 +1,13 @@
-from channels import route
+# mysite/routing.py
+from channels.auth import AuthMiddlewareStack
+from channels.routing import ProtocolTypeRouter, URLRouter
+import chat.routing
 
-# This function will display all messages received in the console
-def message_handler(message):
-    print(message['text'])
-
-
-channel_routing = [
-    route("websocket.receive", message_handler)  # we register our message handler
-]
+application = ProtocolTypeRouter({
+    # (http->django views is added by default)
+    'websocket': AuthMiddlewareStack(
+        URLRouter(
+            chat.routing.websocket_urlpatterns
+        )
+    ),
+})

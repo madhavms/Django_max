@@ -23,8 +23,11 @@
     {%block register%}
   <a class="navbar-brand nav navbar-right" href="{% url 'register'%}">Register</a>  <!--this templating gives direct access to the url that is given name='register'-->
    {%endblock%}
+
    {%block logout%}
  <a class="navbar-brand nav navbar-right" href="{% url 'logout'%}">Logout</a>  <!--this templating gives direct access to the url that is given name='register'-->
+  {%endblock%}
+  {%block view_posts%}
   {%endblock%}
   {%block profile%}
   <a class="navbar-brand nav navbar-right" href="{%url 'view_profile'%}">Profile</a>
@@ -37,6 +40,9 @@
   {%endblock%}
   {%block change_password%}
   <a class="navbar-brand nav navbar-right" href="{%url 'change_password'%}">Change Password</a>
+  {%endblock%}
+  {%block edit_post%}
+  <a class="navbar-brand nav navbar-right" href="{%url 'post_edit'%}">Edit Posts</a>
   {%endblock%}
   </div>
 </nav>
