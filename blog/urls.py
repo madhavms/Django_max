@@ -14,3 +14,4 @@ urlpatterns = [
                 url(r'^(?P<pk>\d+)/edit$',login_required(EditPost.as_view()),name='edit')
 
             ]
+ 
