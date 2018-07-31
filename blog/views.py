@@ -1,11 +1,11 @@
-# -*- coding: utf-8 -*-
+ # -*- coding: utf-8 -*-
 from django.views.generic import TemplateView
-from home.forms import HomeForm
+from blog.forms import HomeForm
 from django.shortcuts import render,redirect
-from home.models import Post
+from blog.models import Post
 
 class HomeView(TemplateView):
-    template_name='home/home.html'
+    template_name='blog/home.html'
 
     def get(self,request):
         form=HomeForm()
@@ -21,7 +21,7 @@ class HomeView(TemplateView):
             post.save()
             text = form.cleaned_data['post'] #takes post from forms.py
             form = HomeForm() #To remove text from form afetr submission
-            return redirect('/home',pk=post.pk)
+            return redirect('/blog',pk=post.pk)
         args = {'form':form,'text':text}
         return render(request,self.template_name,args)
 class PostView(TemplateView):
@@ -43,7 +43,7 @@ class EditPost(TemplateView):
                 post.user = request.user
                 post.updated = timezone.now()
                 post.save()
-                return redirect('/home', pk=post.pk)
+                return redirect('/blog', pk=post.pk)
         else:
             form = HomeForm()
         return render(request, 'home/post_edit.html', {'form': form})

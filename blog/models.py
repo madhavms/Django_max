@@ -5,8 +5,8 @@ from django.db import models
 
 # Create your models here.
 class Post(models.Model):
-    title= models.CharField(max_length=50, default='DEFAULT VALUE')
-    post = models.CharField(max_length=500, default='DEFAULT VALUE')
+    title= models.CharField(max_length=50)
+    post = models.TextField()
     user = models.ForeignKey(User)
     created = models.DateTimeField(auto_now_add=True) #add date when object was created
     updated = models.DateTimeField(auto_now=True)

@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{%block head%}
+<title>Home</title>
+{%endblock%}
+  {%block body%}
+  {% for post in object_list %}
+		<h5>{{ post.created|date:"Y-m-d" }}<a href="/blog/{{post.id}}">  {{ post.title }}</a></h5>
+
+  {% endfor %}
+  {%endblock%}
+{%block login%}
+{%endblock%}
+{%block register%}
+{%endblock%}

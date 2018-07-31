@@ -32,7 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'accounts',
-    'home',
+    'blog',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -125,7 +125,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 LOGIN_URL='/account/login' #sets redirect url for @login_required
-LOGIN_REDIRECT_URL='/home/'  #Its this specific name that identifies redirect after login
+LOGIN_REDIRECT_URL='/blog/'  #Its this specific name that identifies redirect after login
 #EMAIL_HOST = 'localhost'
 #EMAIL_PORT = 1025
 #python -m smtpd -n -c DebuggingServer localhost:1025
