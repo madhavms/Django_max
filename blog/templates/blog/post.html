@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block body %}
+<div class="container">
+
+
+<h4><a href="/blog/{{post.id}}">{{ post.title }}</a></h4>
+<h6> created by {{post.user}} on {{ post.created }}</h6>
+
+<h4><br><br>
+	{{ post.post|safe|linebreaks}}
+</div>
+<br><br></h4>
+
+{%endblock%}
+{%block login%}
+{%endblock%}
+{%block register%}
+{%endblock%}
+{%block edit%}
+<div class="container">
+
+
+<br><h4><a class="submit" href={%url 'edit' post.id%}>Edit Post</a></h4></div>
+{%endblock%}

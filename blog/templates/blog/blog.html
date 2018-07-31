@@ -1,8 +1,11 @@
 {% extends "base.html" %}
+{%load static%}
 {%block head%}
 <title>Home</title>
+
 {%endblock%}
   {%block body%}
+  <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css" />
   {% for post in object_list %}
 		<h5>{{ post.created|date:"Y-m-d" }}<a href="/blog/{{post.id}}">  {{ post.title }}</a></h5>
 
