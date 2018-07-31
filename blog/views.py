@@ -33,8 +33,7 @@ class EditPost(UpdateView):
     fileds=['title','post']
     template_name = "blog/edit_post.html"
 
-    def get_object(self, *args, **kwargs):
-        user = get_object_or_404(User, pk=self.kwargs['pk'])
+
 
 
 
