@@ -19,6 +19,7 @@
 {%block edit%}
 <div class="container">
 
+<h5>last edited at {{ post.updated }}</h5>
 
 <br><h4><a class="submit" href={%url 'edit' post.id%}>Edit Post</a></h4></div>
 {%endblock%}

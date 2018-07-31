@@ -7,6 +7,7 @@ from django.views.generic import UpdateView
 from django.contrib.auth.models import User
 from django.core.urlresolvers import reverse
 class HomeView(TemplateView):
+    
     template_name='blog/home.html'
 
     def get(self,request):
