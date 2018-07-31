@@ -7,12 +7,16 @@
   {%block body%}
 
 
+ <div class="container">
+
 
   <h2>Post List</h2>
   {% for post in object_list %}
-		<h3>{{ post.created|date:"Y-m-d" }}<a href="/blog/{{post.id}}">  {{ post.title }}</a></h3>
+    <h3><a href="/blog/{{post.id}}">  {{ post.title }}</a></h3>
+    <h5>Created by {{post.user}} at {{ post.created }}</h5>
 
   {% endfor %}
+  </div>
   {%endblock%}
 {%block login%}
 {%endblock%}

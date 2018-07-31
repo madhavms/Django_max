@@ -22,4 +22,11 @@
 <h5>last edited at {{ post.updated }}</h5>
 
 <br><h4><a class="submit" href={%url 'edit' post.id%}>Edit Post</a></h4></div>
+<div class="container">
+<br><h4><a class="submit" href={%url 'delete' post.id%}>Delete Post</a></h4></div>
+
+<div class="container">
+
+
+<br><h4><a class="link" href={%url 'view'%}>Back</a></h4></div></div>
 {%endblock%}

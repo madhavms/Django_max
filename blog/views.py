@@ -3,11 +3,11 @@ from django.views.generic import TemplateView
 from blog.forms import HomeForm
 from django.shortcuts import render,redirect,get_object_or_404
 from blog.models import Post
-from django.views.generic import UpdateView
+from django.views.generic import UpdateView,DeleteView
 from django.contrib.auth.models import User
 from django.core.urlresolvers import reverse
 class HomeView(TemplateView):
-    
+
     template_name='blog/home.html'
 
     def get(self,request):
@@ -42,6 +42,13 @@ class EditPost(UpdateView):
         # for other models.
 
 
+
+    def get_success_url(self, *args, **kwargs):
+        return reverse("view")
+
+class DeletePost(DeleteView):
+    model = Post
+    template_name = "blog/delete_post.html"
 
     def get_success_url(self, *args, **kwargs):
         return reverse("view")
