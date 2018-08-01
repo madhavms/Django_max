@@ -22,7 +22,7 @@ urlpatterns = [
     url(r'^$',views.login_redirect,name='login_redirect'),
     url(r'^admin/', admin.site.urls),
     url(r'^account/',include('accounts.urls'),name='account'),
-    url(r'^blog/',include('blog.urls'),name='home'),
+    url(r'^blog/',include('blog.urls',namespace='blog'),name='blog'),
     url(r'^chat/',include('chat.urls'),name='chat'),
 
 

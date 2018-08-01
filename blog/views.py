@@ -1,11 +1,12 @@
  # -*- coding: utf-8 -*-
 from django.views.generic import TemplateView
-from blog.forms import HomeForm
+from blog.forms import HomeForm,CommentForm
 from django.shortcuts import render,redirect,get_object_or_404
-from blog.models import Post
-from django.views.generic import UpdateView,DeleteView
+from blog.models import Post,Comment
+from django.views.generic import UpdateView,DeleteView,CreateView
 from django.contrib.auth.models import User
 from django.core.urlresolvers import reverse
+from django.views.generic import DetailView
 class HomeView(TemplateView):
 
     template_name='blog/home.html'
@@ -31,7 +32,7 @@ class HomeView(TemplateView):
 class EditPost(UpdateView):
     model = Post
     form_class = HomeForm
-    fileds=['title','post']
+
     template_name = "blog/edit_post.html"
 
 
@@ -44,11 +45,27 @@ class EditPost(UpdateView):
 
 
     def get_success_url(self, *args, **kwargs):
-        return reverse("view")
+        return reverse("blog:view")
 
 class DeletePost(DeleteView):
     model = Post
     template_name = "blog/delete_post.html"
 
     def get_success_url(self, *args, **kwargs):
-        return reverse("view")
+        return reverse("blog:view")
+
+def add_comment_to_post(request, pk):
+    post = get_object_or_404(Post, pk=pk)
+    if request.method == "POST":
+        form = CommentForm(request.POST)
+        if form.is_valid():
+            comment = form.save(commit=False)
+            comment.post = post
+            comment.save()
+            return redirect('blog:detail', pk=post.pk)
+    else:
+        form = CommentForm()
+    return render(request, 'blog/post_comment.html', {'form': form,})
+class DetailPost(DetailView):
+    model = Post
+    template_name = "blog/post.html"

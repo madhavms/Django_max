@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block body %}
+{%load crispy_forms_tags%}
+<div class="container">
+
+
+<h2><a href="/blog/{{post.id}}">{{ post.title }}</a></h2>
+<h5> created by {{post.user}} on {{ post.created }}</h5>
+
+<h4><br><br>
+	{{ post.post|safe|linebreaks}}
+</div>
+<br><br></h4>
+
+{%endblock%}
+{%block login%}
+{%endblock%}
+{%block register%}
+{%endblock%}
+{%block edit%}
+<div class="container">
+
+
+
+<div class="container">
+<h1>Add Comments Post</h1>
+<form action="" method="post">{% csrf_token %}
+    {{ form|crispy }}
+    <br><input type="submit" value="Submit" />
+</form>
+
+</div>
+<div class="container">
+<hr>
+<div class="container">
+<h3>Comments:</h3>
+
+{%endblock%}
