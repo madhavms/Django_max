@@ -154,14 +154,14 @@ CHANNEL_LAYERS = {
         "CONFIG": {
             "hosts": [(redis_host, 6379)],
         },
-       "ROUTING": "multichat.routing.channel_routing", # We will create it in a moment
+       "ROUTING": "chat.routing.channel_routing", # We will create it in a moment
     },
 }
-ASGI_APPLICATION = 'mysite.routing.application'
+ASGI_APPLICATION = 'Django_Max.routing.application'
 
 # mysite/settings.py
 # Channels
-ASGI_APPLICATION = 'mysite.routing.application'
+ASGI_APPLICATION = 'Django_Max.routing.application'
 CHANNEL_LAYERS = {
     'default': {
         'BACKEND': 'channels_redis.core.RedisChannelLayer',
